@@ -25,7 +25,7 @@ const AppsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Featured Builds - Swathi Chaturvedi</title>
+        <title>Built & Shipped - Swathi Chaturvedi</title>
         <meta name="description" content="Featured builds and applications including AVAHSA and Money Leak - tools designed to solve real problems with thoughtful design." />
       </Helmet>
 

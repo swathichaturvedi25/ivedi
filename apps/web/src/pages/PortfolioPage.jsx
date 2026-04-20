@@ -37,7 +37,7 @@ const PortfolioPage = () => {
   return (
     <>
       <Helmet>
-        <title>Case Studies: From Concept to Launch - Swathi Chaturvedi</title>
+        <title>Product Strategy Lab - Swathi Chaturvedi</title>
         <meta name="description" content="Explore my product strategy case studies showcasing end-to-end product thinking, market analysis, and cross-functional leadership." />
       </Helmet>
 
