@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 183 74% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 20% 65%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 183 74% 42%;
+    --radius: 0.75rem;
+    
+    /* Resume specific custom properties */
+    --timeline-line: 214 32% 91%;
+    --timeline-dot: 183 74% 42%;
+    --timeline-dot-ring: 0 0% 98%;
+    --resume-card-hover: 210 40% 96%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Featured build card custom properties */
+    --featured-card-image-height: 280px;
+    --featured-card-image-bg: var(--muted);
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 183 74% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 183 74% 42%;
+
+    /* Resume specific custom properties */
+    --timeline-line: 217 33% 17%;
+    --timeline-dot: 183 74% 42%;
+    --timeline-dot-ring: 222 47% 11%;
+    --resume-card-hover: 217 33% 17%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Featured build card custom properties */
+    --featured-card-image-bg: var(--muted);
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "DM Sans", sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    overflow-x: clip;
+    font-feature-settings: "kern" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    font-weight: 600;
+  }
+
+  p {
+    line-height: 1.625;
+    max-width: 65ch;
+  }
+
+  input, textarea, select {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .container-custom {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-custom {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Featured Build Card Image Container */
+  .featured-card-image-container {
+    height: var(--featured-card-image-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(var(--featured-card-image-bg));
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+
+  .featured-card-image-container img {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  /* Resume Timeline Utilities */
+  .resume-timeline {
+    position: relative;
+    border-left: 2px solid hsl(var(--timeline-line));
+    margin-left: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .resume-timeline {
+      margin-left: 1.5rem;
+    }
+  }
+
+  .resume-timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .resume-timeline-item {
+      padding-left: 3rem;
+    }
+  }
+
+  .resume-timeline-dot {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: hsl(var(--timeline-dot));
+    border-radius: 9999px;
+    left: -0.5625rem;
+    top: 0.375rem;
+    box-shadow: 0 0 0 0.375rem hsl(var(--timeline-dot-ring));
+  }
+
+  /* Case Study Typography and Layout Utilities */
+  .case-study-content h2 {
+    font-size: 1.875rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: hsl(var(--foreground));
+    letter-spacing: -0.01em;
+  }
+
+  .case-study-content p {
+    margin-bottom: 1.5rem;
+    color: hsl(var(--foreground) / 0.85);
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  .case-study-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+    color: hsl(var(--foreground) / 0.85);
+    font-size: 1.125rem;
+  }
+
+  .case-study-content li {
+    margin-bottom: 0.75rem;
+  }
+}
